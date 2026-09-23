@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Ofisnack">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+  <title>Calculadora Ofisnack</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <img class="logo" src="ofisnack-logo.png" alt="Ofisnack - Tu break saludable">
+      <p>Calculá la cantidad ideal de snacks y boxes para cada empresa.</p>
+    </header>
+
+    <section class="form">
+      <label>Colaboradores
+        <input id="people" type="number" min="0" step="1" value="50" inputmode="numeric">
+      </label>
+      <label>Días por semana
+        <input id="days" type="number" min="0" max="5" step="1" value="3" inputmode="numeric">
+        <small>De 0 a 5</small>
+      </label>
+      <label>Snacks por persona/día
+        <select id="per" aria-label="Snacks por persona por día" style="width:100%;font:inherit;padding:12px;border:1px solid #d8dee8;border-radius:10px;background:#fff;color:inherit">
+          <option value="0.5">0,5</option>
+          <option value="1" selected>1</option>
+          <option value="1.5">1,5</option>
+          <option value="2">2</option>
+          <option value="2.5">2,5</option>
+          <option value="3">3</option>
+          <option value="3.5">3,5</option>
+          <option value="4">4</option>
+          <option value="4.5">4,5</option>
+          <option value="5">5</option>
+        </select>
+        <small>Elegí la cantidad por persona</small>
+      </label>
+    </section>
+
+    <section class="results">
+      <article>
+        <div class="top"><h2>Por semana</h2><span id="wdays">3 días</span></div>
+        <div id="wsnacks" class="snacks">150</div>
+        <div class="snacklabel">snacks necesarios</div>
+        <hr>
+        <div class="eyebrow">BOXES RECOMENDADOS</div>
+        <div id="wboxes" class="boxes"></div>
+        <div id="wtotal" class="meta"></div>
+        <div id="wextra" class="extra"></div>
+      </article>
+
+      <article>
+        <div class="top"><h2>Por mes</h2><span id="mdays">12 días</span></div>
+        <div id="msnacks" class="snacks">600</div>
+        <div class="snacklabel">snacks necesarios</div>
+        <hr>
+        <div class="eyebrow">BOXES RECOMENDADOS</div>
+        <div id="mboxes" class="boxes"></div>
+        <div id="mtotal" class="meta"></div>
+        <div id="mextra" class="extra"></div>
+      </article>
+    </section>
+
+    <aside><b>Criterio:</b> mes de 20 días laborables. Boxes disponibles: 15, 20, 30, 50 y 100 unidades. La recomendación cubre la necesidad con el menor excedente posible y, ante opciones equivalentes, prioriza menos boxes.</aside>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
